@@ -247,7 +247,7 @@ DROP TABLE IF EXISTS contain;
 
 CREATE TABLE IF NOT EXISTS contain(
 	exercise_id INT,
-    workout_id VARCHAR(64),
+    workout_id INT,
     week_day VARCHAR(64) NOT NULL,
     sets INT NOT NULL,
     reps INT NOT NULL,
@@ -259,6 +259,67 @@ CREATE TABLE IF NOT EXISTS contain(
 );
 
 
+INSERT INTO contain (exercise_id, workout_id, week_day, sets, reps)
+VALUES 
+	(1, 1, 'Monday', 3, 15),
+	(2, 1, 'Monday', 2, 12),
+	(3, 1, 'Monday', 4, 20),
+	(4, 1, 'Tuesday', 3, 10),
+	(5, 1, 'Tuesday', 2, 15),
+	(6, 1, 'Tuesday', 4, 18),
+    (7, 1, 'Wednesday', 3, 12),
+	(8, 1, 'Wednesday', 2, 20),
+	(9, 1, 'Wednesday', 4, 13),
+	(10, 1, 'Thursday', 3, 18),
+	(11, 1, 'Thursday', 2, 20),
+	(12, 1, 'Thursday', 4, 16),
+	(13, 1, 'Friday', 3, 15),
+	(14, 1, 'Friday', 2, 18),
+	(15, 1, 'Friday', 4, 12),
+    (16, 1, 'Saturday', 3, 12),
+	(17, 1, 'Saturday', 2, 20),
+	(19, 1, 'Saturday', 4, 15),
+    (21, 2, 'Monday', 3, 15),
+	(22, 2, 'Monday', 2, 12),
+	(23, 2, 'Monday', 4, 20),
+	(24, 2, 'Tuesday', 3, 10),
+	(25, 2, 'Tuesday', 2, 15),
+	(26, 2, 'Tuesday', 4, 18),
+    (27, 2, 'Wednesday', 3, 12),
+	(28, 2, 'Wednesday', 2, 20),
+	(29, 2, 'Wednesday', 4, 13),
+	(32, 2, 'Thursday', 3, 18),
+	(33, 2, 'Thursday', 2, 20),
+	(35, 2, 'Thursday', 4, 16),
+	(37, 2, 'Friday', 3, 15),
+	(36, 2, 'Friday', 2, 18),
+	(30, 2, 'Friday', 4, 12),
+    (41, 2, 'Saturday', 3, 12),
+	(44, 2, 'Saturday', 2, 20),
+	(43, 2, 'Saturday', 4, 15),
+    
+    (48, 3, 'Monday', 3, 15),
+	(50, 3, 'Monday', 2, 12),
+	(51, 3, 'Monday', 4, 20),
+	(52, 3, 'Tuesday', 3, 10),
+	(53, 3, 'Tuesday', 2, 15),
+	(54, 3, 'Tuesday', 4, 18),
+    (55, 3, 'Wednesday', 3, 12),
+	(56, 3, 'Wednesday', 2, 20),
+	(57, 3, 'Wednesday', 4, 13),
+	(58, 3, 'Thursday', 3, 18),
+	(60, 3, 'Thursday', 2, 20),
+	(51, 3, 'Thursday', 4, 16),
+	(53, 3, 'Friday', 3, 15),
+	(55, 3, 'Friday', 2, 18),
+	(57, 3, 'Friday', 4, 12),
+    (56, 3, 'Saturday', 3, 12),
+	(60, 3, 'Saturday', 2, 20),
+	(58, 3, 'Saturday', 4, 15);
+    
+    
+  
+  
 # Diet_plan Table
 DROP TABLE IF EXISTS diet_plan;
 
@@ -281,9 +342,9 @@ CREATE TABLE IF NOT EXISTS diet_plan_description(
     week_day VARCHAR(64) NOT NULL,
     meal_description VARCHAR(250) NOT NULL,
     calories VARCHAR(64) NOT NULL,
-    plan_id VARCHAR(64),
-    primary key (plan_type, week_day, mealtime),
-    FOREIGN KEY (plan_type) REFERENCES diet_plan(plan_type)
+    plan_id INT,
+    primary key (plan_id, week_day, mealtime),
+    FOREIGN KEY (plan_id) REFERENCES diet_plan(plan_id)
 		ON UPDATE CASCADE ON DELETE CASCADE
 );
 
@@ -358,31 +419,31 @@ VALUES
 DROP TABLE IF EXISTS clients;
 
 CREATE TABLE IF NOT EXISTS clients(
-	client_id INT PRIMARY KEY,
+	client_id VARCHAR(64) PRIMARY KEY,
     name VARCHAR(150) NOT NULL,
     email VARCHAR(150) NOT NULL,
-    phone_number VARCHAR(13) NOT NULL,
+    phone_number VARCHAR(20) NOT NULL,
     address VARCHAR(250) NOT NULL,
-    trainer_id INT,
-    workout_type VARCHAR(64),
-    plan_id VARCHAR(64),
+    trainer_id VARCHAR(10),
+    workout_id INT,
+    plan_id INT,
     FOREIGN KEY (trainer_id) REFERENCES trainer(staff_id)
 		ON UPDATE CASCADE ON DELETE SET NULL,
-    FOREIGN KEY (workout_type) REFERENCES exercise_schedule(workout_type)
+    FOREIGN KEY (workout_id) REFERENCES exercise_schedule(workout_id)
 		ON UPDATE CASCADE ON DELETE SET NULL,
-	FOREIGN KEY (plan_type) REFERENCES diet_plan(plan_type)
+	FOREIGN KEY (plan_id) REFERENCES diet_plan(plan_id)
 		ON UPDATE CASCADE ON DELETE SET NULL
 );
 
 
-INSERT INTO clients (client_id, name, email, phone_number, address, trainer_id, workout_type, plan_type)
+INSERT INTO clients (client_id, name, email, phone_number, address, trainer_id, workout_id, plan_id)
 VALUES 
-	('CL1', 'Jake Paralta', 'jake.paralta@gmail.com', '123 Tremont St, Boston, MA 02120', 'TR3', 'Cardio', 1),
-    ('CL2', 'Ted Mosby', 'ted.mosby@gmail.com', '345 Main St, Boston, MA 02122', 'TR4', 'Function Training', 2),
-    ('CL3', 'Barney Stinson', 'barney.stinson@gmail.com', '333 Huntington St, Boston, MA 02110', 'TR2', 'Strength Training', 3),
-    ('CL4', 'Amy Santiago', 'amy.santiago@gmail.com', '344 Tremont St, Boston, MA 02120', 'TR1', 'Functional Training', 1),
-    ('CL5', 'Sherlock Homles', 'sherlock.holmes@gmail.com', '666 downtown St, Boston, MA 02121', 'TR6', 'Cardio', 3),
-    ('CL6', 'Peter Parker', 'peter.parker@gmail.com', '221 Baker St, Boston, MA 02111', 'TR5', 'Strength Training', 2);
+	('CL1', 'Jake Paralta', 'jake.paralta@gmail.com', '879-456-1234', '123 Tremont St, Boston, MA 02120', 'TR3', 1, 1),
+    ('CL2', 'Ted Mosby', 'ted.mosby@gmail.com', '857-459-1324', '345 Main St, Boston, MA 02122', 'TR4', 3, 2),
+    ('CL3', 'Barney Stinson', 'barney.stinson@gmail.com', '567-456-9867', '333 Huntington St, Boston, MA 02110', 'TR2', 2, 3),
+    ('CL4', 'Amy Santiago', 'amy.santiago@gmail.com', '223-115-0909', '344 Tremont St, Boston, MA 02120', 'TR1', 3, 1),
+    ('CL5', 'Sherlock Homles', 'sherlock.holmes@gmail.com', '111-222-5577', '666 downtown St, Boston, MA 02121', 'TR6', 1, 3),
+    ('CL6', 'Peter Parker', 'peter.parker@gmail.com', '443-566-7788', '221 Baker St, Boston, MA 02111', 'TR5', 2, 2);
 
 
 # Health Report Table
@@ -397,7 +458,7 @@ CREATE TABLE IF NOT EXISTS health_report(
     drinking BOOL NOT NULL,
     surgery BOOL NOT NULL,
     date DATE NOT NULL,
-    client_id INT,
+    client_id VARCHAR(64),
     primary key(client_id, date),
     FOREIGN KEY (client_id) REFERENCES clients(client_id)
 		ON UPDATE CASCADE ON DELETE CASCADE
@@ -408,10 +469,10 @@ CREATE TABLE IF NOT EXISTS health_report(
 DROP TABLE IF EXISTS registers;
 
 CREATE TABLE IF NOT EXISTS registers(
-	id INT auto_increment primary key,
-	manager_id INT,
+	register_id INT auto_increment primary key,
+	manager_id VARCHAR(64),
 	branch_id INT,
-    client_id INT,
+    client_id VARCHAR(64),
     membership_type VARCHAR(64),
     membership_start_date DATE NOT NULL,
     membership_end_date DATE NOT NULL,
