@@ -99,14 +99,15 @@ DROP TABLE IF EXISTS membership_plan;
 CREATE TABLE IF NOT EXISTS membership_plan(
 	# enum (premium, gold, silver)
     membership_type VARCHAR(64) PRIMARY KEY,
-    fees INT NOT NULL
+    fees INT NOT NULL,
+    duration INT NOT NULL
 );
 
-INSERT INTO membership_plan (membership_type, fees)
+INSERT INTO membership_plan (membership_type, fees, duration)
 VALUES 
-	('Silver', 3000),
-    ('Gold', 4500),
-    ('Platinum', '6000');
+	('Silver', 2000, 3),
+    ('Gold', 4500, 6),
+    ('Platinum', '6000', 12);
     
 
 
@@ -445,6 +446,9 @@ VALUES
     ('CL5', 'Sherlock Homles', 'sherlock.holmes@gmail.com', '111-222-5577', '666 downtown St, Boston, MA 02121', 'TR6', 1, 3),
     ('CL6', 'Peter Parker', 'peter.parker@gmail.com', '443-566-7788', '221 Baker St, Boston, MA 02111', 'TR5', 2, 2);
 
+INSERT INTO clients (client_id, name, email, phone_number, address, trainer_id, workout_id, plan_id)
+VALUES
+	('CL7', 'Gwen Stacy', 'gwen.stacy@gmail.com', '667-334-1111', '007 Bond St, Boston, MA 02120', 'TR3', 2, 3);
 
 # Health Report Table
 DROP TABLE IF EXISTS health_report;
@@ -452,7 +456,7 @@ DROP TABLE IF EXISTS health_report;
 CREATE TABLE IF NOT EXISTS health_report(
 	weight FLOAT NOT NULL,
     height VARCHAR(64) NOT NULL,
-    bmi FLOAT NOT NULL,
+    bmi FLOAT,
     fat_percentage FLOAT NOT NULL,
     smoking BOOL NOT NULL,
     drinking BOOL NOT NULL,
@@ -469,13 +473,13 @@ CREATE TABLE IF NOT EXISTS health_report(
 DROP TABLE IF EXISTS registers;
 
 CREATE TABLE IF NOT EXISTS registers(
-	register_id INT auto_increment primary key,
+	register_id INT AUTO_INCREMENT PRIMARY KEY,
 	manager_id VARCHAR(64),
 	branch_id INT,
     client_id VARCHAR(64),
     membership_type VARCHAR(64),
     membership_start_date DATE NOT NULL,
-    membership_end_date DATE NOT NULL,
+    membership_end_date DATE,
     FOREIGN KEY (manager_id) REFERENCES manager(staff_id)
 		ON UPDATE CASCADE ON DELETE NO ACTION,
     FOREIGN KEY (branch_id) REFERENCES branch(branch_id)
@@ -487,7 +491,10 @@ CREATE TABLE IF NOT EXISTS registers(
 );
 
 
+INSERT INTO registers
+VALUES 
+	(1, 'MA1', 1, 'CL2', 'Gold', '2000-02-20', '2000-05-20'),
+    (2, 'MA1', 1, 'CL1', 'Platinum', '2001-02-20', '2002-02-20'),
+    (3, 'MA2', 2, 'CL3', 'Silver', '2000-02-20', '2000-08-20'),
+    (4, 'MA2', 2, 'CL4', 'Gold', '2000-02-20', '2000-05-20');
 
-
-
-# Login
