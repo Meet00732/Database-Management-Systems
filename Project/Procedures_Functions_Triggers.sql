@@ -232,3 +232,97 @@ DELIMITER ;
 
 CALL trainer_views_workout_type(1);
 
+
+# 6. Trainers views all diet_plan_type
+DROP PROCEDURE trainer_views_all_diet_plan_type;
+
+DELIMITER $$
+CREATE PROCEDURE trainer_views_all_diet_plan_type()
+	BEGIN
+		SELECT * FROM diet_plan;
+	END $$
+DELIMITER ;
+
+CALL trainer_views_all_diet_plan_type;
+
+
+# 7. Trainer selects a particular diet_plan
+DROP PROCEDURE trainer_views_diet_plan_type;
+
+DELIMITER $$
+CREATE PROCEDURE trainer_views_diet_plan_type(IN plan_id_p INT)
+	BEGIN
+		SELECT dp.plan_type, dpd.mealtime, dpd.week_day, dpd.meal_description, dpd.calories FROM diet_plan dp
+			JOIN diet_plan_description dpd
+				ON dp.plan_id = dpd.plan_id
+		WHERE dpd.plan_id = plan_id_p;
+    END $$
+DELIMITER ;
+
+CALL trainer_views_diet_plan_type(3);
+
+
+# 8. Trainer views all exercises
+DROP PROCEDURE trainer_views_all_exercises;
+
+DELIMITER $$
+CREATE PROCEDURE trainer_views_all_exercises()
+	BEGIN
+		SELECT es.workout_type, e.* FROM exercise e
+			JOIN contain c
+				ON c.exercise_id = e.exercise_id
+			JOIN exercise_schedule es
+				ON es.workout_id = c.workout_id
+		GROUP BY e.exercise_id
+		ORDER BY e.exercise_id;
+    END $$
+DELIMITER ;
+
+CALL trainer_views_all_exercises;
+
+
+# 9. Trainer selects an exercise
+DROP PROCEDURE trainer_views_exercise;
+
+DELIMITER $$
+CREATE PROCEDURE trainer_views_exercise(IN exercise_id_p INT)
+	BEGIN
+		SELECT es.workout_type, e.* FROM exercise e
+			JOIN contain c
+				ON c.exercise_id = e.exercise_id
+			JOIN exercise_schedule es
+				ON es.workout_id = c.workout_id
+		GROUP BY e.exercise_id
+        HAVING exercise_id = exercise_id_p
+		ORDER BY e.exercise_id;
+        
+    END $$
+DELIMITER ;
+
+CALL trainer_views_exercise(25);
+
+
+# 10. Trainer views all equipments
+DROP PROCEDURE trainer_views_all_equipments;
+
+DELIMITER $$
+CREATE PROCEDURE trainer_views_all_equipments()
+	BEGIN
+		SELECT * FROM equipment;
+    END $$
+DELIMITER ;
+
+CALL trainer_views_all_equipments;
+
+# 11. Trainer views an equipment
+DROP PROCEDURE trainer_views_equipments;
+
+DELIMITER $$
+CREATE PROCEDURE trainer_views_equipments(IN equipment_id_p INT)
+	BEGIN
+		SELECT * FROM equipment
+        WHERE equipment_id = equipment_id_p;
+    END $$
+DELIMITER ;
+
+CALL trainer_views_equipments(105);
