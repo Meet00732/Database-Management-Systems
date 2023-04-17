@@ -80,7 +80,7 @@ CREATE TABLE `clients` (
 
 LOCK TABLES `clients` WRITE;
 /*!40000 ALTER TABLE `clients` DISABLE KEYS */;
-INSERT INTO `clients` VALUES ('CL1','Jake Paralta','jake.paralta@gmail.com','879-456-1234','123 Tremont St, Boston, MA 02120','TR3',1,1),('CL10','Monica Geller','monica.geller@gmail.com','454-433-3123','335 Huntington St, Boston, MA 02110','TR1',NULL,NULL),('CL11','Rachel Green','monica.geller@gmail.com','454-433-3123','335 Huntington St, Boston, MA 02110','TR1',NULL,NULL),('CL2','Barney Stinson','ted.mosby@gmail.com','857-459-1324','345 Main St, Boston, MA 02122','TR3',3,2),('CL3','Barney Stinson','barney.stinson@gmail.com','567-456-9867','333 Huntington St, Boston, MA 02110','TR2',2,3),('CL4','Amy Santiago','amy.santiago@gmail.com','223-115-0909','344 Tremont St, Boston, MA 02120','TR1',3,2),('CL5','Sherlock Homles','sherlock.holmes@gmail.com','111-222-5577','666 downtown St, Boston, MA 02121','TR6',1,3),('CL6','Peter Parker','peter.parker@gmail.com','443-566-7788','221 Baker St, Boston, MA 02111','TR5',2,2),('CL7','Gwen Stacy','gwen.stacy@gmail.com','667-334-1111','007 Bond St, Boston, MA 02120','TR3',2,3),('CL8','Monica Geller','monica.geller@gmail.com','454-433-3123','335 Huntington St, Boston, MA 02110','TR1',NULL,NULL),('CL9','Monica Geller','monica.geller@gmail.com','454-433-3123','335 Huntington St, Boston, MA 02110','TR1',NULL,NULL);
+INSERT INTO `clients` VALUES ('CL1','Jake Paralta','jake.paralta@gmail.com','879-456-1234','123 Tremont St, Boston, MA 02120','TR1',1,1),('CL10','Tony Stark','tony.stark@gmail.com','664-335-0909','344 Tremont St, Boston, MA 02120','TR1',1,1),('CL11','Chris Evans','chris.evans@gmail.com','756-334-5577','666 downtown St, Boston, MA 02121','TR1',1,3),('CL12','Tom Holland','tom.holland@gmail.com','998-888-7788','221 Baker St, Boston, MA 02111','TR1',2,2),('CL13','Gwen Stacy','gwen.stacy@gmail.com','116-221-5577','666 downtown St, Boston, MA 02121','TR1',1,3),('CL14','Ana Armas','ana.armas@gmail.com','667-332-7878','221 Baker St, Boston, MA 02111','TR1',2,2),('CL2','Ted Mosby','ted.mosby@gmail.com','857-459-1324','345 Main St, Boston, MA 02122','TR1',3,2),('CL3','Barney Stinson','barney.stinson@gmail.com','567-456-9867','333 Huntington St, Boston, MA 02110','TR2',2,3),('CL4','Amy Santiago','amy.santiago@gmail.com','223-115-0909','344 Tremont St, Boston, MA 02120','TR1',3,1),('CL5','Sherlock Homles','sherlock.holmes@gmail.com','111-222-5577','666 downtown St, Boston, MA 02121','TR6',1,3),('CL6','Peter Parker','peter.parker@gmail.com','443-566-7788','221 Baker St, Boston, MA 02111','TR1',1,2),('CL7','Tom Cruise','tom.cruise@gmail.com','332-112-1234','123 Tremont St, Boston, MA 02120','TR1',1,1),('CL8','Phil Dundphy','phil.dundphy@gmail.com','111-222-2221','345 Main St, Boston, MA 02122','TR4',3,2),('CL9','Kartik Aaryan','kartik.aaryan@gmail.com','990-873-1254','333 Huntington St, Boston, MA 02110','TR2',2,3);
 /*!40000 ALTER TABLE `clients` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -182,7 +182,7 @@ CREATE TABLE `diet_plan_description` (
 
 LOCK TABLES `diet_plan_description` WRITE;
 /*!40000 ALTER TABLE `diet_plan_description` DISABLE KEYS */;
-INSERT INTO `diet_plan_description` VALUES ('breakfast','Friday','chinese','500',1),('dinner','Friday','Pesto chicken with roasted vegetables','450',1),('lunch','Friday','Tuna salad with cucumber and tomato','300',1),('breakfast','Monday','Scrambled eggs with spinach and mushrooms','300',1),('dinner','Monday','Baked salmon with cauliflower rice','450',1),('lunch','Monday','Grilled chicken with roasted vegetables','400',1),('breakfast','Saturday','Avocado and egg toast','300',1),('dinner','Saturday','Baked cod with asparagus and lemon','400',1),('lunch','Saturday','Grilled steak with roasted vegetables','450',1),('breakfast','Sunday','Low-carb waffles with bacon and eggs','400',1),('dinner','Sunday','Beef and vegetable kebabs with tzatziki sauce','450',1),('lunch','Sunday','Grilled chicken Caesar salad','350',1),('breakfast','Thursday','Baked egg muffins with spinach and cheese','300',1),('dinner','Thursday','Chicken and vegetable curry with cauliflower rice','450',1),('lunch','Thursday','Cauliflower crust pizza with vegetables','400',1),('breakfast','Tuesday','Greek yogurt with berries and almonds','250',1),('dinner','Tuesday','Beef stir-fry with broccoli and peppers','400',1),('lunch','Tuesday','Turkey lettuce wraps with avocado and tomato','350',1),('breakfast','Wednesday','Green smoothie with protein powder','300',1),('dinner','Wednesday','Grilled shrimp with zucchini noodles','400',1),('lunch','Wednesday','Spinach salad with grilled chicken and feta','350',1),('breakfast','Friday','Low-carb muffins with cream cheese','250',2),('dinner','Friday','Zucchini lasagna with ground beef and cheese','650',2),('lunch','Friday','Salmon burger with avocado and tomato','550',2),('breakfast','Monday','Scrambled eggs with avocado and bacon','400',2),('dinner','Monday','Grilled salmon with roasted vegetables','600',2),('lunch','Monday','Tuna salad with mixed greens and olive oil dressing','500',2),('breakfast','Saturday','Keto waffles with sugar-free syrup','400',2),('dinner','Saturday','Grilled steak with mixed vegetables','600',2),('lunch','Saturday','Tuna salad with avocado and cucumber','400',2),('breakfast','Sunday','Frittata with sausage and peppers','500',2),('dinner','Sunday','Spaghetti squash with meat sauce','550',2),('lunch','Sunday','Turkey and cheese roll-ups with mixed greens','450',2),('breakfast','Thursday','Keto smoothie with almond milk and berries','350',2),('dinner','Thursday','Pork chops with green beans and garlic butter','600',2),('lunch','Thursday','Turkey lettuce wraps with avocado and mayo','450',2),('breakfast','Tuesday','Keto pancakes with sugar-free syrup','300',2),('dinner','Tuesday','Beef stir-fry with zucchini noodles','650',2),('lunch','Tuesday','Grilled chicken with broccoli and cauliflower rice','550',2),('breakfast','Wednesday','Bacon and cheese omelet with spinach','450',2),('dinner','Wednesday','Baked cod with asparagus and lemon butter sauce','550',2),('lunch','Wednesday','Cobb salad with ranch dressing','500',2),('breakfast','Friday','Avocado toast with cherry tomatoes and feta cheese','350',3),('dinner','Friday','Eggplant parmesan with mixed greens salad','500',3),('lunch','Friday','Falafel wrap with hummus and tzatziki sauce','400',3),('breakfast','Monday','Grilled potato with spinach and tomatoes','350',3),('dinner','Monday','Roasted vegetables with quinoa and chickpeas','400',3),('lunch','Monday','Grilled portobello mushroom burger with avocado and sweet potato fries','500',3),('breakfast','Saturday','Mushroom and cheese omelette with whole wheat toast','400',3),('dinner','Saturday','Black bean and vegetable enchiladas with guacamole','500',3),('lunch','Saturday','Veggie burger with roasted sweet potato wedges','450',3),('breakfast','Sunday','Pancakes with maple syrup and fresh fruit','450',3),('dinner','Sunday','Vegetable curry with brown rice and naan bread','500',3),('lunch','Sunday','Spinach and feta quiche with mixed greens salad','400',3),('breakfast','Thursday','Green smoothie with kale, banana, and almond milk','300',3),('dinner','Thursday','Stuffed bell peppers with rice and black beans','450',3),('lunch','Thursday','Grilled cheese sandwich with tomato soup','400',3),('breakfast','Tuesday','Chia seed pudding with mixed berries and almond milk','300',3),('dinner','Tuesday','Spaghetti squash with marinara sauce and sautéed mushrooms','400',3),('lunch','Tuesday','Caprese salad with fresh basil and balsamic vinaigrette','250',3),('breakfast','Wednesday','Greek yogurt with honey and walnuts','250',3),('dinner','Wednesday','Butternut squash soup with crusty bread','350',3),('lunch','Wednesday','Vegetable stir-fry with tofu and brown rice','450',3);
+INSERT INTO `diet_plan_description` VALUES ('breakfast','Friday','Almond flour pancakes with berries','350',1),('dinner','Friday','Pesto chicken with roasted vegetables','450',1),('lunch','Friday','Tuna salad with cucumber and tomato','300',1),('breakfast','Monday','Scrambled eggs with spinach and mushrooms','300',1),('dinner','Monday','Baked salmon with cauliflower rice','450',1),('lunch','Monday','Grilled chicken with roasted vegetables','400',1),('breakfast','Saturday','Avocado and egg toast','300',1),('dinner','Saturday','Baked cod with asparagus and lemon','400',1),('lunch','Saturday','Grilled steak with roasted vegetables','450',1),('breakfast','Sunday','Low-carb waffles with bacon and eggs','400',1),('dinner','Sunday','Beef and vegetable kebabs with tzatziki sauce','450',1),('lunch','Sunday','Grilled chicken Caesar salad','350',1),('breakfast','Thursday','Baked egg muffins with spinach and cheese','300',1),('dinner','Thursday','Chicken and vegetable curry with cauliflower rice','450',1),('lunch','Thursday','Cauliflower crust pizza with vegetables','400',1),('breakfast','Tuesday','Greek yogurt with berries and almonds','250',1),('dinner','Tuesday','Beef stir-fry with broccoli and peppers','400',1),('lunch','Tuesday','Turkey lettuce wraps with avocado and tomato','350',1),('breakfast','Wednesday','Green smoothie with protein powder','300',1),('dinner','Wednesday','Grilled shrimp with zucchini noodles','400',1),('lunch','Wednesday','Spinach salad with grilled chicken and feta','350',1),('breakfast','Friday','Low-carb muffins with cream cheese','250',2),('dinner','Friday','Zucchini lasagna with ground beef and cheese','650',2),('lunch','Friday','Salmon burger with avocado and tomato','550',2),('breakfast','Monday','Scrambled eggs with avocado and bacon','400',2),('dinner','Monday','Grilled salmon with roasted vegetables','600',2),('lunch','Monday','Tuna salad with mixed greens and olive oil dressing','500',2),('breakfast','Saturday','Keto waffles with sugar-free syrup','400',2),('dinner','Saturday','Grilled steak with mixed vegetables','600',2),('lunch','Saturday','Tuna salad with avocado and cucumber','400',2),('breakfast','Sunday','Frittata with sausage and peppers','500',2),('dinner','Sunday','Spaghetti squash with meat sauce','550',2),('lunch','Sunday','Turkey and cheese roll-ups with mixed greens','450',2),('breakfast','Thursday','Keto smoothie with almond milk and berries','350',2),('dinner','Thursday','Pork chops with green beans and garlic butter','600',2),('lunch','Thursday','Turkey lettuce wraps with avocado and mayo','450',2),('breakfast','Tuesday','Keto pancakes with sugar-free syrup','300',2),('dinner','Tuesday','Beef stir-fry with zucchini noodles','650',2),('lunch','Tuesday','Grilled chicken with broccoli and cauliflower rice','550',2),('breakfast','Wednesday','Bacon and cheese omelet with spinach','450',2),('dinner','Wednesday','Baked cod with asparagus and lemon butter sauce','550',2),('lunch','Wednesday','Cobb salad with ranch dressing','500',2),('breakfast','Friday','Avocado toast with cherry tomatoes and feta cheese','350',3),('dinner','Friday','Eggplant parmesan with mixed greens salad','500',3),('lunch','Friday','Falafel wrap with hummus and tzatziki sauce','400',3),('breakfast','Monday','Grilled potato with spinach and tomatoes','350',3),('dinner','Monday','Roasted vegetables with quinoa and chickpeas','400',3),('lunch','Monday','Grilled portobello mushroom burger with avocado and sweet potato fries','500',3),('breakfast','Saturday','Mushroom and cheese omelette with whole wheat toast','400',3),('dinner','Saturday','Black bean and vegetable enchiladas with guacamole','500',3),('lunch','Saturday','Veggie burger with roasted sweet potato wedges','450',3),('breakfast','Sunday','Pancakes with maple syrup and fresh fruit','450',3),('dinner','Sunday','Vegetable curry with brown rice and naan bread','500',3),('lunch','Sunday','Spinach and feta quiche with mixed greens salad','400',3),('breakfast','Thursday','Green smoothie with kale, banana, and almond milk','300',3),('dinner','Thursday','Stuffed bell peppers with rice and black beans','450',3),('lunch','Thursday','Grilled cheese sandwich with tomato soup','400',3),('breakfast','Tuesday','Chia seed pudding with mixed berries and almond milk','300',3),('dinner','Tuesday','Spaghetti squash with marinara sauce and sautéed mushrooms','400',3),('lunch','Tuesday','Caprese salad with fresh basil and balsamic vinaigrette','250',3),('breakfast','Wednesday','Greek yogurt with honey and walnuts','250',3),('dinner','Wednesday','Butternut squash soup with crusty bread','350',3),('lunch','Wednesday','Vegetable stir-fry with tofu and brown rice','450',3);
 /*!40000 ALTER TABLE `diet_plan_description` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -198,7 +198,7 @@ CREATE TABLE `equipment` (
   `equipment_name` varchar(100) NOT NULL,
   `equipment_description` varchar(250) NOT NULL,
   PRIMARY KEY (`equipment_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=118 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=119 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -207,7 +207,7 @@ CREATE TABLE `equipment` (
 
 LOCK TABLES `equipment` WRITE;
 /*!40000 ALTER TABLE `equipment` DISABLE KEYS */;
-INSERT INTO `equipment` VALUES (101,'Treadmill','A cardio machine that simulates running or walking in place'),(102,'Stationary bike','A bike that stays in one place while you pedal it'),(103,'Elliptical','A cardio machine that combines aspects of running, cycling, and climbing'),(104,'Rowing machine','A machine that simulates the motion of rowing a boat'),(105,'Weight bench','A bench designed for weight training exercises'),(106,'Dumbbells','Free weights that are used for strength training'),(107,'Barbell','A long metal bar used for weightlifting exercises'),(108,'Squat rack','A piece of equipment used for exercises like squats and bench presses'),(109,'Leg press machine','A machine used for leg strengthening exercises'),(110,'Stair climber','A cardio machine that simulates climbing stairs'),(111,'Spin bike','A stationary bike used for indoor cycling classes'),(112,'Resistance bands','Elastic bands used for resistance training'),(113,'Jump rope','A simple piece of equipment used for cardio and coordination training'),(114,'Plyo box','A box used for plyometric exercises like box jumps'),(117,'Kettle bell','Test equipment');
+INSERT INTO `equipment` VALUES (101,'Treadmill','A cardio machine that simulates running or walking in place'),(102,'Stationary bike','A bike that stays in one place while you pedal it'),(103,'Elliptical','A cardio machine that combines aspects of running, cycling, and climbing'),(104,'Rowing machine','A machine that simulates the motion of rowing a boat'),(105,'Weight bench','A bench designed for weight training exercises'),(106,'Dumbbells','Free weights that are used for strength training'),(107,'Barbell','A long metal bar used for weightlifting exercises'),(108,'Squat rack','A piece of equipment used for exercises like squats and bench presses'),(109,'Leg press machine','A machine used for leg strengthening exercises'),(110,'Stair climber','A cardio machine that simulates climbing stairs'),(111,'Spin bike','A stationary bike used for indoor cycling classes'),(112,'Resistance bands','Elastic bands used for resistance training'),(113,'Jump rope','A simple piece of equipment used for cardio and coordination training'),(114,'Plyo box','A box used for plyometric exercises like box jumps'),(115,'Kettlebell','A type of weight used for functional fitness exercises');
 /*!40000 ALTER TABLE `equipment` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -233,7 +233,7 @@ CREATE TABLE `exercise` (
 
 LOCK TABLES `exercise` WRITE;
 /*!40000 ALTER TABLE `exercise` DISABLE KEYS */;
-INSERT INTO `exercise` VALUES (1,'Treadmill','A workout where you run or walk on a moving platform.'),(2,'Elliptical','A workout where you simulate running, walking, or climbing stairs.'),(3,'Stationary Bike','A workout where you cycle on a stationary bike.'),(4,'Stair Climber','A workout where you climb stairs on a machine.'),(5,'Rowing Machine','A workout where you simulate rowing on a machine.'),(6,'Jumping Jacks','A workout where you jump and spread your legs and arms.'),(7,'Jump Rope','A workout where you jump over a rope as it swings under your feet.'),(8,'High Knees','A workout where you jog in place, lifting your knees as high as you can.'),(9,'Mountain Climbers','A workout where you get into a push-up position and alternately bring your knees toward your chest.'),(10,'Sprints','A workout where you run as fast as you can for a short distance.'),(11,'Jogging','A workout where you run at a moderate pace.'),(12,'Hiking','A workout where you walk up and down hills and trails.'),(13,'Cycling','A workout where you cycle outdoors on a bike.'),(14,'Jumping Squats','A workout where you squat down and jump up.'),(15,'Plyometric Lunges','A workout where you alternate lunges with jumping.'),(16,'Jumping Lunges','A workout where you jump and alternate lunges.'),(17,'Jumping Jack Squats','A workout where you do a combination of jumping jacks and squats.'),(18,'Jumping Jack Burpees','A workout where you do a combination of jumping jacks and burpees.'),(19,'Jumping Jack High Knees','A workout where you do a combination of jumping jacks and high knees.'),(20,'Jumping Jack Mountain Climbers','A workout where you do a combination of jumping jacks and mountain climbers.'),(21,'Bicep Curl','Strength training exercise for biceps muscles'),(22,'Deadlift','Strength training exercise for back and leg muscles'),(23,'Squat','Strength training exercise for leg muscles'),(24,'Bench Press','Strength training exercise for chest muscles'),(25,'Pull-up','Strength training exercise for back and arm muscles'),(26,'Tricep Extension','Strength training exercise for triceps muscles'),(27,'Lateral Raise','Strength training exercise for shoulder muscles'),(28,'Crunches','Strength training exercise for abs muscles'),(29,'Leg Press','Strength training exercise for leg muscles'),(30,'Push-up','Strength training exercise for chest, shoulder, and arm muscles'),(31,'Dumbbell Fly','Strength training exercise for chest muscles'),(32,'Hammer Curl','Strength training exercise for biceps muscles'),(33,'Calf Raise','Strength training exercise for calf muscles'),(34,'Reverse Fly','Strength training exercise for back and shoulder muscles'),(35,'Russian Twist','Strength training exercise for abs muscles'),(36,'Dumbbell Row','Strength training exercise for back muscles'),(37,'Overhead Press','Strength training exercise for shoulder muscles'),(38,'Leg Curl','Strength training exercise for leg muscles'),(39,'Dumbbell Pullover','Strength training exercise for chest and back muscles'),(40,'Dumbbell Squat','Strength training exercise for leg muscles'),(41,'Dumbbell Lunges','Strength training exercise for leg muscles'),(42,'Seated Cable Row','Strength training exercise for back muscles'),(43,'Tricep Pushdown','Strength training exercise for triceps muscles'),(44,'Cable Curl','Strength training exercise for biceps muscles'),(45,'Incline Press','Strength training exercise for upper chest muscles'),(46,'Kettlebell Swing','Strengthens the posterior chain and improves cardiovascular endurance'),(47,'Turkish Get-Up','Full-body functional exercise that improves stability, mobility and coordination'),(48,'Medicine Ball Slam','Explosive exercise that improves power and cardiovascular fitness'),(49,'Battle Rope Wave','Total body exercise that improves muscular endurance and cardiovascular fitness'),(50,'Box Jump','Plyometric exercise that improves lower body power and explosiveness'),(51,'Burpee','Full-body exercise that improves cardiovascular fitness and muscular endurance'),(52,'Sandbag Clean and Press','Total body exercise that improves power and functional strength'),(53,'TRX Suspension Trainer Row','Improves upper back and shoulder strength and stability'),(54,'Boxing','Improves cardiovascular fitness and coordination'),(55,'Sled Push/Pull','Full-body exercise that improves power and functional strength'),(56,'Agility Ladder Drills','Improves footwork, speed and coordination'),(57,'Squat to Overhead Press','Total body exercise that improves power and functional strength'),(58,'Dumbbell Snatch','Total body exercise that improves power and functional strength'),(59,'Farmers Walk','Improves grip strength, core stability and functional strength'),(60,'Tire Flip','Total body exercise that improves power and functional strength'),(61,'Squatt','test');
+INSERT INTO `exercise` VALUES (1,'Treadmill','A workout where you run or walk on a moving platform.'),(2,'Elliptical','A workout where you simulate running, walking, or climbing stairs.'),(3,'Stationary Bike','A workout where you cycle on a stationary bike.'),(4,'Stair Climber','A workout where you climb stairs on a machine.'),(5,'Rowing Machine','A workout where you simulate rowing on a machine.'),(6,'Jumping Jacks','A workout where you jump and spread your legs and arms.'),(7,'Jump Rope','A workout where you jump over a rope as it swings under your feet.'),(8,'High Knees','A workout where you jog in place, lifting your knees as high as you can.'),(9,'Mountain Climbers','A workout where you get into a push-up position and alternately bring your knees toward your chest.'),(10,'Sprints','A workout where you run as fast as you can for a short distance.'),(11,'Jogging','A workout where you run at a moderate pace.'),(12,'Hiking','A workout where you walk up and down hills and trails.'),(13,'Cycling','A workout where you cycle outdoors on a bike.'),(14,'Jumping Squats','A workout where you squat down and jump up.'),(15,'Plyometric Lunges','A workout where you alternate lunges with jumping.'),(16,'Jumping Lunges','A workout where you jump and alternate lunges.'),(17,'Jumping Jack Squats','A workout where you do a combination of jumping jacks and squats.'),(18,'Jumping Jack Burpees','A workout where you do a combination of jumping jacks and burpees.'),(19,'Jumping Jack High Knees','A workout where you do a combination of jumping jacks and high knees.'),(20,'Jumping Jack Mountain Climbers','A workout where you do a combination of jumping jacks and mountain climbers.'),(21,'Bicep Curl','Strength training exercise for biceps muscles'),(22,'Deadlift','Strength training exercise for back and leg muscles'),(23,'Squat','Strength training exercise for leg muscles'),(24,'Bench Press','Strength training exercise for chest muscles'),(25,'Pull-up','Strength training exercise for back and arm muscles'),(26,'Tricep Extension','Strength training exercise for triceps muscles'),(27,'Lateral Raise','Strength training exercise for shoulder muscles'),(28,'Crunches','Strength training exercise for abs muscles'),(29,'Leg Press','Strength training exercise for leg muscles'),(30,'Push-up','Strength training exercise for chest, shoulder, and arm muscles'),(31,'Dumbbell Fly','Strength training exercise for chest muscles'),(32,'Hammer Curl','Strength training exercise for biceps muscles'),(33,'Calf Raise','Strength training exercise for calf muscles'),(34,'Reverse Fly','Strength training exercise for back and shoulder muscles'),(35,'Russian Twist','Strength training exercise for abs muscles'),(36,'Dumbbell Row','Strength training exercise for back muscles'),(37,'Overhead Press','Strength training exercise for shoulder muscles'),(38,'Leg Curl','Strength training exercise for leg muscles'),(39,'Dumbbell Pullover','Strength training exercise for chest and back muscles'),(40,'Dumbbell Squat','Strength training exercise for leg muscles'),(41,'Dumbbell Lunges','Strength training exercise for leg muscles'),(42,'Seated Cable Row','Strength training exercise for back muscles'),(43,'Tricep Pushdown','Strength training exercise for triceps muscles'),(44,'Cable Curl','Strength training exercise for biceps muscles'),(45,'Incline Press','Strength training exercise for upper chest muscles'),(46,'Kettlebell Swing','Strengthens the posterior chain and improves cardiovascular endurance'),(47,'Turkish Get-Up','Full-body functional exercise that improves stability, mobility and coordination'),(48,'Medicine Ball Slam','Explosive exercise that improves power and cardiovascular fitness'),(49,'Battle Rope Wave','Total body exercise that improves muscular endurance and cardiovascular fitness'),(50,'Box Jump','Plyometric exercise that improves lower body power and explosiveness'),(51,'Burpee','Full-body exercise that improves cardiovascular fitness and muscular endurance'),(52,'Sandbag Clean and Press','Total body exercise that improves power and functional strength'),(53,'TRX Suspension Trainer Row','Improves upper back and shoulder strength and stability'),(54,'Boxing','Improves cardiovascular fitness and coordination'),(55,'Sled Push/Pull','Full-body exercise that improves power and functional strength'),(56,'Agility Ladder Drills','Improves footwork, speed and coordination'),(57,'Squat to Overhead Press','Total body exercise that improves power and functional strength'),(58,'Dumbbell Snatch','Total body exercise that improves power and functional strength'),(59,'Farmers Walk','Improves grip strength, core stability and functional strength'),(60,'Tire Flip','Total body exercise that improves power and functional strength');
 /*!40000 ALTER TABLE `exercise` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -248,7 +248,7 @@ CREATE TABLE `exercise_schedule` (
   `workout_id` int NOT NULL AUTO_INCREMENT,
   `workout_type` varchar(64) NOT NULL,
   PRIMARY KEY (`workout_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -290,7 +290,7 @@ CREATE TABLE `health_report` (
 
 LOCK TABLES `health_report` WRITE;
 /*!40000 ALTER TABLE `health_report` DISABLE KEYS */;
-INSERT INTO `health_report` VALUES (22,120,'5.110000133514404',4.59557,10.3,1,0,0,'2000-02-20','CL2'),(23,134,'5.800000190734863',3.98335,23,1,0,1,'2000-02-03','CL4'),(24,134,'66',0.0307622,15,0,1,0,'2023-04-09','CL4');
+INSERT INTO `health_report` VALUES (25,68.5,'170 cm',23.6,18.5,0,1,0,'2022-03-01','CL1'),(35,85.6,'180 cm',26.5,22.7,1,1,0,'2022-03-15','CL2'),(30,72.1,'172 cm',24.4,19.2,1,0,0,'2022-03-05','CL3'),(28,63.2,'165 cm',23.2,17.6,0,1,1,'2022-03-20','CL3'),(40,80,'175 cm',26.1,21.8,0,0,1,'2022-03-10','CL4');
 /*!40000 ALTER TABLE `health_report` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -398,13 +398,13 @@ CREATE TABLE `registers` (
   PRIMARY KEY (`register_id`),
   KEY `manager_id` (`manager_id`),
   KEY `branch_id` (`branch_id`),
-  KEY `client_id` (`client_id`),
   KEY `membership_type` (`membership_type`),
+  KEY `registers_ibfk_3_idx` (`client_id`),
   CONSTRAINT `registers_ibfk_1` FOREIGN KEY (`manager_id`) REFERENCES `manager` (`staff_id`) ON UPDATE CASCADE,
   CONSTRAINT `registers_ibfk_2` FOREIGN KEY (`branch_id`) REFERENCES `branch` (`branch_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `registers_ibfk_3` FOREIGN KEY (`client_id`) REFERENCES `clients` (`client_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `registers_ibfk_3` FOREIGN KEY (`client_id`) REFERENCES `clients` (`client_id`),
   CONSTRAINT `registers_ibfk_4` FOREIGN KEY (`membership_type`) REFERENCES `membership_plan` (`membership_type`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -413,7 +413,7 @@ CREATE TABLE `registers` (
 
 LOCK TABLES `registers` WRITE;
 /*!40000 ALTER TABLE `registers` DISABLE KEYS */;
-INSERT INTO `registers` VALUES (1,'MA1',1,'CL2','Gold','2000-02-20','2000-05-20'),(2,'MA1',1,'CL1','Platinum','2001-02-20','2002-02-20'),(3,'MA2',2,'CL3','Silver','2000-02-20','2000-08-20'),(4,'MA2',2,'CL4','Gold','2000-02-20','2000-05-20'),(5,'MA1',1,'CL10','Gold','2023-04-01','2023-07-01'),(6,'MA1',1,'CL11','Gold','2023-04-01','2023-07-01');
+INSERT INTO `registers` VALUES (1,'MA1',1,'CL2','Gold','2002-02-20','2002-08-20'),(2,'MA1',1,'CL1','Platinum','2001-02-20','2001-02-20'),(3,'MA2',2,'CL3','Silver','2002-02-06','2002-05-20'),(4,'MA2',2,'CL4','Gold','2002-02-20','2002-08-20'),(5,'MA1',1,'CL5','Silver','2002-01-06','2002-04-06'),(6,'MA1',1,'CL6','Gold','2001-02-07','2001-08-07'),(7,'MA1',1,'CL7','Silver','2001-03-12','2001-06-12'),(8,'MA1',1,'CL8','Gold','2000-05-15','2000-11-15'),(9,'MA1',1,'CL9','Silver','2001-01-20','2001-04-20'),(10,'MA1',1,'CL10','Gold','2002-02-23','2002-05-23'),(11,'MA1',1,'CL11','Silver','2001-06-26','2001-09-26'),(12,'MA1',1,'CL12','Gold','2000-02-20','2000-08-20'),(13,'MA1',1,'CL13','Silver','2000-07-29','2000-10-29'),(14,'MA1',1,'CL14','Gold','2000-04-14','2000-10-14');
 /*!40000 ALTER TABLE `registers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -451,7 +451,7 @@ CREATE TABLE `trainer` (
 
 LOCK TABLES `trainer` WRITE;
 /*!40000 ALTER TABLE `trainer` DISABLE KEYS */;
-INSERT INTO `trainer` VALUES ('TR1','Mit Patel','234-555-1234','MITPATEL@GMAIL.COM','123 Main St, Boston, MA 02108','08:00:00','16:00:00',50000,'Weight Lifting',10,1),('TR10','Lisa Kim','857-555-2345','lisa.kim@example.com','400 2nd St, Boston, CA 02115','14:00:00','22:00:00',65000,'Crossfit',10,5),('TR2','Mihir Chitre','278-555-5678','Mihir.chitre@example.com','456 Market St, Boston, CA 02108','12:00:00','20:00:00',60000,'Yoga',8,2),('TR3','Aditya Gurnani','099-555-9012','Aditya.gurnani@example.com','789 Elm St, Boston, IL 02116','09:00:00','17:00:00',55000,'Cardio',6,3),('TR4','Shashank Patel','678-555-3457','Shashank.patel@example.com','100 Fifth Ave, Boston, NY 02116','10:00:00','18:00:00',65000,'Pilates',10,4),('TR5','Krishi Panchal','111-555-7891','Krishi.panchal@example.com','200 Main St, Boston, TX 02109','07:00:00','15:00:00',45000,'Crossfit',3,5),('TR6','Pratik Poojari','673-555-2346','Pratik.poojari@example.com','1000 Main St, Boston, MA 02109','13:00:00','21:00:00',70000,'Spinning',9,2),('TR7','David Kim','857-555-6789','david.kim@example.com','500 1st St, Boston, WA 02114','11:00:00','19:00:00',60000,'Boxing',7,1),('TR8','Jennifer Aniston','857-555-3456','jennifer.aniston@example.com','700 Maple Ave, Boston, TX 02114','08:00:00','16:00:00',50000,'Zumba',5,4),('TR9','Brian Jones','857-555-7890','brian.jones@example.com','100 Park Ave, Boston, NY 02115','09:00:00','17:00:00',55000,'Martial Arts',6,3);
+INSERT INTO `trainer` VALUES ('TR1','Meet Patel','234-555-1234','Meet.patel@example.com','123 Main St, Boston, MA 02108','08:00:00','16:00:00',50000,'Weight Lifting',5,1),('TR10','Lisa Kim','857-555-2345','lisa.kim@example.com','400 2nd St, Boston, CA 02115','14:00:00','22:00:00',65000,'Crossfit',10,5),('TR2','Mihir Chitre','278-555-5678','Mihir.chitre@example.com','456 Market St, Boston, CA 02108','12:00:00','20:00:00',60000,'Yoga',8,2),('TR3','Aditya Gurnani','099-555-9012','Aditya.gurnani@example.com','789 Elm St, Boston, IL 02116','09:00:00','17:00:00',55000,'Cardio',6,3),('TR4','Shashank Patel','678-555-3457','Shashank.patel@example.com','100 Fifth Ave, Boston, NY 02116','10:00:00','18:00:00',65000,'Pilates',10,4),('TR5','Krishi Panchal','111-555-7891','Krishi.panchal@example.com','200 Main St, Boston, TX 02109','07:00:00','15:00:00',45000,'Crossfit',3,5),('TR6','Pratik Poojari','673-555-2346','Pratik.poojari@example.com','1000 Main St, Boston, MA 02109','13:00:00','21:00:00',70000,'Spinning',9,2),('TR7','David Kim','857-555-6789','david.kim@example.com','500 1st St, Boston, WA 02114','11:00:00','19:00:00',60000,'Boxing',7,1),('TR8','Jennifer Aniston','857-555-3456','jennifer.aniston@example.com','700 Maple Ave, Boston, TX 02114','08:00:00','16:00:00',50000,'Zumba',5,4),('TR9','Brian Jones','857-555-7890','brian.jones@example.com','100 Park Ave, Boston, NY 02115','09:00:00','17:00:00',55000,'Martial Arts',6,3);
 /*!40000 ALTER TABLE `trainer` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -478,7 +478,7 @@ CREATE TABLE `used_in` (
 
 LOCK TABLES `used_in` WRITE;
 /*!40000 ALTER TABLE `used_in` DISABLE KEYS */;
-INSERT INTO `used_in` VALUES (112,7),(113,7);
+INSERT INTO `used_in` VALUES (101,1),(102,2),(102,3),(103,3),(104,4),(105,5),(106,6),(108,6),(107,7),(108,8),(109,9),(101,10),(103,10),(110,10),(101,11),(104,11),(101,12),(102,12),(103,12),(104,12),(105,12),(108,15),(106,16),(106,18),(110,18),(107,20),(109,20),(109,48),(107,49),(110,50);
 /*!40000 ALTER TABLE `used_in` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -832,6 +832,35 @@ BEGIN
 			SIGNAL SQLSTATE '42000' SET MESSAGE_TEXT = 'No Record Found!';
 		END IF;
 	END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `manager_visualize_membership_plan` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `manager_visualize_membership_plan`(IN staff_id_p VARCHAR(64))
+BEGIN
+		DECLARE id VARCHAR(64);
+        
+        SELECT staff_id INTO id FROM manager
+			WHERE staff_id = staff_id_p;
+            
+		IF id IS NOT NULL THEN
+			SELECT client_id, membership_type FROM registers
+				WHERE manager_id = staff_id_p;
+		ELSE
+			SIGNAL SQLSTATE '42000' SET MESSAGE_TEXT = 'Manager_Id Does Not Exist';
+		END IF;
+    END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
@@ -1852,6 +1881,68 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `trainer_visualize_plan_type` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `trainer_visualize_plan_type`(IN trainer_id_p VARCHAR(64))
+BEGIN
+		DECLARE id VARCHAR(64);
+        
+        SELECT staff_id INTO id FROM trainer
+			WHERE staff_id = trainer_id_p;
+            
+		IF id IS NOT NULL THEN
+			SELECT client_id, plan_type FROM clients c
+				JOIN diet_plan dp
+					ON dp.plan_id = c.plan_id
+			WHERE trainer_id = trainer_id_p;
+        ELSE
+			SIGNAL SQLSTATE '42000' SET MESSAGE_TEXT = 'Trainer_Id Does Not Exist';
+		END IF;
+    END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `trainer_visualize_workout_type` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `trainer_visualize_workout_type`(IN trainer_id_p VARCHAR(64))
+BEGIN
+		DECLARE id VARCHAR(64);
+        
+        SELECT staff_id INTO id FROM trainer
+			WHERE staff_id = trainer_id_p;
+            
+		IF id IS NOT NULL THEN
+			SELECT client_id, workout_type FROM clients c
+				JOIN exercise_schedule es
+					ON c.workout_id = es.workout_id
+            WHERE trainer_id = trainer_id_p;
+		ELSE
+			SIGNAL SQLSTATE '42000' SET MESSAGE_TEXT = 'Trainer_Id Does Not Exist';
+		END IF;
+    END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!50003 DROP PROCEDURE IF EXISTS `view_diet_plan_client` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
@@ -2034,4 +2125,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-04-15 19:03:26
+-- Dump completed on 2023-04-17  0:12:47
