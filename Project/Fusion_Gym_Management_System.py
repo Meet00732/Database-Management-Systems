@@ -272,7 +272,7 @@ def manager_views_clients():
     cur.callproc("manager_view_all_clients", args=[username])
     # print(cur.fetchall())
     table = Table(title="Clients' Details")
-    columns = ["Client Id", "Client name", "Contact number", "Email Id", "Address", "Assigned trainer"]
+    columns = ["Client Id", "Client name", "Contact number", "Email Id", "Address", "Assigned trainer", "Membership start date", "Membership end date", "Membership plan"]
     rows = []
     for x in cur.fetchall():
         temp = []
@@ -282,6 +282,9 @@ def manager_views_clients():
         temp.append(str(x['email']))
         temp.append(str(x['address']))
         temp.append(str(x['trainer_name']))
+        temp.append(str(x['membership_start_date']))
+        temp.append(str(x['membership_end_date']))
+        temp.append(str(x['membership_type']))
         rows.append(temp)
     for column in columns:
         table.add_column(column)
@@ -346,7 +349,7 @@ def manager_updates_clients():
             case 2:
                 client_id = input('\n Enter the Id of client to be deleted: ')
                 try:
-                    cur.callproc("manager_delete_client", args=[client_id])
+                    cur.callproc("manager_delete_client", args=[client_id,username])
                     connect.commit()
                     print('\n -- Client deleted --')
                     manager_views_clients()
@@ -362,13 +365,16 @@ def manager_registers_clients():
                "Membership type", "Membership start date(yyyy-mm-dd)"]
     client_insert_fields = ['id', 'name', 'phone_number', 'email', 'address', 'trainer_id']
     client_insert_values = []
-    print("\n -- Enter the following details for the new client: --")
-    for x in columns:
-        client_field_value = input(x + ": ")
-        if (client_field_value == ''):
-            client_field_value = None
-        client_insert_values.append(client_field_value)
     try:
+        cur.callproc("max_client_id")
+        res = cur.fetchone()
+        print("\nLast client created in Fitness Fusion Gym has following Id, enter an Id after this: " + res['client_id'])
+        print("\n -- Enter the following details for the new client: --")
+        for x in columns:
+            client_field_value = input(x + ": ")
+            if (client_field_value == ''):
+                client_field_value = None
+            client_insert_values.append(client_field_value)
         cur.callproc("manager_create_client",
                      args=[client_insert_values[0], client_insert_values[1], client_insert_values[3],
                            client_insert_values[2], client_insert_values[4], client_insert_values[5], None, None,

@@ -80,7 +80,7 @@ CREATE TABLE `clients` (
 
 LOCK TABLES `clients` WRITE;
 /*!40000 ALTER TABLE `clients` DISABLE KEYS */;
-INSERT INTO `clients` VALUES ('CL1','Jake Paralta','jake.paralta@gmail.com','879-456-1234','123 Tremont St, Boston, MA 02120','TR1',1,1),('CL10','Tony Stark','tony.stark@gmail.com','664-335-0909','344 Tremont St, Boston, MA 02120','TR1',1,1),('CL11','Chris Evans','chris.evans@gmail.com','756-334-5577','666 downtown St, Boston, MA 02121','TR1',1,3),('CL12','Tom Holland','tom.holland@gmail.com','998-888-7788','221 Baker St, Boston, MA 02111','TR1',2,2),('CL13','Gwen Stacy','gwen.stacy@gmail.com','116-221-5577','666 downtown St, Boston, MA 02121','TR1',1,3),('CL14','Ana Armas','ana.armas@gmail.com','667-332-7878','221 Baker St, Boston, MA 02111','TR1',2,2),('CL2','Ted Mosby','ted.mosby@gmail.com','857-459-1324','345 Main St, Boston, MA 02122','TR1',3,2),('CL3','Barney Stinson','barney.stinson@gmail.com','567-456-9867','333 Huntington St, Boston, MA 02110','TR2',2,3),('CL4','Amy Santiago','amy.santiago@gmail.com','223-115-0909','344 Tremont St, Boston, MA 02120','TR1',3,1),('CL5','Sherlock Homles','sherlock.holmes@gmail.com','111-222-5577','666 downtown St, Boston, MA 02121','TR6',1,3),('CL6','Peter Parker','peter.parker@gmail.com','443-566-7788','221 Baker St, Boston, MA 02111','TR1',1,2),('CL7','Tom Cruise','tom.cruise@gmail.com','332-112-1234','123 Tremont St, Boston, MA 02120','TR1',1,1),('CL8','Phil Dundphy','phil.dundphy@gmail.com','111-222-2221','345 Main St, Boston, MA 02122','TR4',3,2),('CL9','Kartik Aaryan','kartik.aaryan@gmail.com','990-873-1254','333 Huntington St, Boston, MA 02110','TR2',2,3);
+INSERT INTO `clients` VALUES ('CL1','Jake Paralta','jake.paralta@gmail.com','879-456-1234','123 Tremont St, Boston, MA 02120','TR1',1,1),('CL10','Tony Stark','tony.stark@gmail.com','664-335-0909','344 Tremont St, Boston, MA 02120','TR1',1,1),('CL11','Chris Evans','chris.evans@gmail.com','756-334-5577','666 downtown St, Boston, MA 02121','TR1',1,3),('CL12','Tom Holland','tom.holland@gmail.com','998-888-7788','221 Baker St, Boston, MA 02111','TR1',2,2),('CL13','Gwen Stacy','gwen.stacy@gmail.com','116-221-5577','666 downtown St, Boston, MA 02121','TR1',1,3),('CL14','Ana Armas','ana.armas@gmail.com','667-332-7878','221 Baker St, Boston, MA 02111','TR1',2,2),('CL2','Ted Mosby','ted.mosby@gmail.com','857-459-1324','345 Main St, Boston, MA 02122','TR1',3,2),('CL4','Amy Santiago','amy.santiago@gmail.com','223-115-0909','344 Tremont St, Boston, MA 02120','TR1',2,1),('CL5','Sherlock Homles','sherlock.holmes@gmail.com','111-222-5577','666 downtown St, Boston, MA 02121','TR6',1,3),('CL6','Peter Parker','peter.parker@gmail.com','443-566-7788','221 Baker St, Boston, MA 02111','TR1',1,2),('CL7','Tom Cruise','tom.cruise@gmail.com','332-112-1234','123 Tremont St, Boston, MA 02120','TR1',1,1),('CL8','Phil Dundphy','phil.dundphy@gmail.com','111-222-2221','345 Main St, Boston, MA 02122','TR4',3,2),('CL9','Kartik Aaryan','kartik.aaryan@gmail.com','990-873-1254','333 Huntington St, Boston, MA 02110','TR2',2,3);
 /*!40000 ALTER TABLE `clients` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -290,7 +290,7 @@ CREATE TABLE `health_report` (
 
 LOCK TABLES `health_report` WRITE;
 /*!40000 ALTER TABLE `health_report` DISABLE KEYS */;
-INSERT INTO `health_report` VALUES (25,68.5,'170 cm',23.6,18.5,0,1,0,'2022-03-01','CL1'),(35,85.6,'180 cm',26.5,22.7,1,1,0,'2022-03-15','CL2'),(30,72.1,'172 cm',24.4,19.2,1,0,0,'2022-03-05','CL3'),(28,63.2,'165 cm',23.2,17.6,0,1,1,'2022-03-20','CL3'),(40,80,'175 cm',26.1,21.8,0,0,1,'2022-03-10','CL4');
+INSERT INTO `health_report` VALUES (25,68.5,'170 cm',23.6,18.5,0,1,0,'2022-03-01','CL1'),(35,85.6,'180 cm',26.5,22.7,1,1,0,'2022-03-15','CL2'),(40,80,'175 cm',26.1,21.8,0,0,1,'2022-03-10','CL4');
 /*!40000 ALTER TABLE `health_report` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -402,9 +402,9 @@ CREATE TABLE `registers` (
   KEY `registers_ibfk_3_idx` (`client_id`),
   CONSTRAINT `registers_ibfk_1` FOREIGN KEY (`manager_id`) REFERENCES `manager` (`staff_id`) ON UPDATE CASCADE,
   CONSTRAINT `registers_ibfk_2` FOREIGN KEY (`branch_id`) REFERENCES `branch` (`branch_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `registers_ibfk_3` FOREIGN KEY (`client_id`) REFERENCES `clients` (`client_id`),
+  CONSTRAINT `registers_ibfk_3` FOREIGN KEY (`client_id`) REFERENCES `clients` (`client_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `registers_ibfk_4` FOREIGN KEY (`membership_type`) REFERENCES `membership_plan` (`membership_type`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -413,7 +413,7 @@ CREATE TABLE `registers` (
 
 LOCK TABLES `registers` WRITE;
 /*!40000 ALTER TABLE `registers` DISABLE KEYS */;
-INSERT INTO `registers` VALUES (1,'MA1',1,'CL2','Gold','2002-02-20','2002-08-20'),(2,'MA1',1,'CL1','Platinum','2001-02-20','2001-02-20'),(3,'MA2',2,'CL3','Silver','2002-02-06','2002-05-20'),(4,'MA2',2,'CL4','Gold','2002-02-20','2002-08-20'),(5,'MA1',1,'CL5','Silver','2002-01-06','2002-04-06'),(6,'MA1',1,'CL6','Gold','2001-02-07','2001-08-07'),(7,'MA1',1,'CL7','Silver','2001-03-12','2001-06-12'),(8,'MA1',1,'CL8','Gold','2000-05-15','2000-11-15'),(9,'MA1',1,'CL9','Silver','2001-01-20','2001-04-20'),(10,'MA1',1,'CL10','Gold','2002-02-23','2002-05-23'),(11,'MA1',1,'CL11','Silver','2001-06-26','2001-09-26'),(12,'MA1',1,'CL12','Gold','2000-02-20','2000-08-20'),(13,'MA1',1,'CL13','Silver','2000-07-29','2000-10-29'),(14,'MA1',1,'CL14','Gold','2000-04-14','2000-10-14');
+INSERT INTO `registers` VALUES (1,'MA1',1,'CL2','Gold','2002-02-20','2002-08-20'),(2,'MA1',1,'CL1','Platinum','2001-02-20','2001-02-20'),(4,'MA2',2,'CL4','Gold','2002-02-20','2002-08-20'),(5,'MA1',1,'CL5','Silver','2002-01-06','2002-04-06'),(6,'MA1',1,'CL6','Gold','2001-02-07','2001-08-07'),(7,'MA1',1,'CL7','Silver','2001-03-12','2001-06-12'),(8,'MA1',1,'CL8','Gold','2000-05-15','2000-11-15'),(9,'MA1',1,'CL9','Silver','2001-01-20','2001-04-20'),(10,'MA1',1,'CL10','Gold','2002-02-23','2002-05-23'),(11,'MA1',1,'CL11','Silver','2001-06-26','2001-09-26'),(12,'MA1',1,'CL12','Gold','2000-02-20','2000-08-20'),(13,'MA1',1,'CL13','Silver','2000-07-29','2000-10-29'),(14,'MA1',1,'CL14','Gold','2000-04-14','2000-10-14');
 /*!40000 ALTER TABLE `registers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -603,6 +603,9 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `manager_create_client`(IN client_id
                                         IN manager_id_p varchar(64))
 BEGIN
 		DECLARE cl_var VARCHAR(64);
+        DECLARE clid VARCHAR(64);
+        DECLARE prefix VARCHAR(2);
+        DECLARE suffix INT; 
 		SELECT client_id INTO cl_var FROM clients
 			WHERE client_id = client_id_p;
         
@@ -636,12 +639,12 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `manager_delete_client`(IN client_id_p VARCHAR(64))
+CREATE DEFINER=`root`@`localhost` PROCEDURE `manager_delete_client`(IN client_id_p VARCHAR(64), IN manager_id_p VARCHAR(64))
 BEGIN 
 		DECLARE id VARCHAR(64);
         
-        SELECT client_id INTO id FROM clients
-			WHERE client_id = client_id_p;
+        SELECT a.client_id INTO id FROM clients as a join registers as b on a.client_id = b.client_id
+			WHERE a.client_id = client_id_p and b.manager_id = manager_id_p;
             
         IF id IS NOT NULL THEN
 			DELETE FROM clients
@@ -717,7 +720,7 @@ DELIMITER ;
 /*!50003 SET character_set_results = utf8mb4 */ ;
 /*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `manager_view_all_clients`(IN manager_id_p VARCHAR(64))
 BEGIN
@@ -727,7 +730,8 @@ BEGIN
 			WHERE staff_id = manager_id_p;
 		
         IF manager_var IS NOT NULL THEN    
-			SELECT c.client_id, c.name, c.email, c.phone_number, c.address, t.staff_name AS trainer_name FROM registers r
+			SELECT c.client_id, c.name, c.email, c.phone_number, c.address, t.staff_name AS trainer_name,
+            r.membership_start_date, r.membership_end_date, r.membership_type FROM registers r
 				JOIN manager m
 					ON m.manager_branch_id = r.branch_id
 				JOIN clients c
@@ -861,6 +865,25 @@ BEGIN
 			SIGNAL SQLSTATE '42000' SET MESSAGE_TEXT = 'Manager_Id Does Not Exist';
 		END IF;
     END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `max_client_id` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `max_client_id`()
+BEGIN
+SELECT client_id from clients order by lpad(lower(client_id),4,0) desc limit 1;
+end ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
@@ -2125,4 +2148,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-04-17  0:12:47
+-- Dump completed on 2023-04-19 13:36:58
